@@ -30,12 +30,34 @@ yarn-error.*
 .DS_Store
 *.pem
 
-# local env files
+# local env files - CRITICAL SECURITY
+.env
+.env.local
+.env.development
+.env.production
+.env.test
 .env*.local
+*.env
+!.env.example
+
+# API Keys and Secrets
+secrets/
+*.secret
+*.secrets.json
+*-key.json
+service-account*.json
 
 # typescript
 *.tsbuildinfo
 
 # generated native folders
 /ios
-/android
+
+# Keep android structure but ignore build outputs and local files
+/android/build
+/android/app/build
+/android/.gradle
+/android/local.properties
+/android/app/google-services.json
+/android/app/release/
+/android/app/debug/
